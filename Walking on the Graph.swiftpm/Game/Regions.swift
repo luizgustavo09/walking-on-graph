@@ -15,21 +15,32 @@ class Regions {
     
     init() {
         r1 = RegionNode(imageName: "region1")
+        r1.name = "r1"
+        
         r2 = RegionNode(imageName: "region2")
+        r2.name = "r2"
+        
         r3 = RegionNode(imageName: "region3")
+        r3.name = "r3"
+        
         r4 = RegionNode(imageName: "region4")
+        r4.name = "r4"
     }
     func configureRegions(viewWidth: CGFloat, viewHeigth: CGFloat) {
-        r1.background.size = CGSize(width: viewHeigth * 0.5, height: viewHeigth * 0.5)
-        r1.background.position = CGPoint(x: viewWidth * 0.45, y: viewHeigth * 0.5)
+        r1.background.size = CGSize(width: Auxiliary.eps(x: 838.43, w: viewWidth), height: Auxiliary.delta(y: 846.62, h: viewHeigth))
+        r1.background.anchorPoint = Auxiliary.anchorPoint
+        r1.background.position = CGPoint(x: Auxiliary.eps(x: 488.12, w: viewWidth), y: -Auxiliary.delta(y: 344.39, h: viewHeigth))
         
-        r2.background.size = CGSize(width: viewWidth * 0.81, height: viewHeigth * 0.49)
-        r2.background.position = CGPoint(x: r2.background.size.width * 0.5, y: viewHeigth - r2.background.size.height * 0.5)
+        r2.background.size = CGSize(width: Auxiliary.eps(x: 1664.48, w: viewWidth), height: Auxiliary.delta(y: 751.91, h: viewHeigth))
+        r2.background.anchorPoint = Auxiliary.anchorPoint
+        r2.background.position = CGPoint(x: Auxiliary.eps(x: 0, w: viewWidth), y: -Auxiliary.delta(y: 0, h: viewHeigth))
         
-        r3.background.size = CGSize(width: viewWidth * 0.76, height: viewHeigth * 0.434)
-        r3.background.position = CGPoint(x: r3.background.size.width/2 , y: r3.background.size.height * 0.5)
+        r3.background.size = CGSize(width: Auxiliary.eps(x: 1555.27, w: viewWidth), height: Auxiliary.delta(y: 667.69, h: viewHeigth))
+        r3.background.anchorPoint = Auxiliary.anchorPoint
+        r3.background.position = CGPoint(x: Auxiliary.eps(x: 0, w: viewWidth), y: -Auxiliary.delta(y: 868.31, h: viewHeigth))
         
-        r4.background.size = CGSize(width: viewWidth * 0.352, height: viewHeigth)
-        r4.background.position = CGPoint(x: viewWidth - r4.background.size.width/2, y: viewHeigth * 0.5)
+        r4.background.size = CGSize(width: Auxiliary.eps(x: 721.41, w: viewWidth), height: Auxiliary.delta(y: 1535.82, h: viewHeigth))
+        r4.background.anchorPoint = Auxiliary.anchorPoint
+        r4.background.position = CGPoint(x: Auxiliary.eps(x: 1326.59, w: viewWidth), y: -Auxiliary.delta(y: 0, h: viewHeigth))
     }
 }

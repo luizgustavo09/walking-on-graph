@@ -36,7 +36,7 @@ let package = Package(
             name: "AppModule",
             path: ".",
             resources: [
-                .process("Resources")
+                .copy("Fonts/Boogaloo-Regular.ttf")
             ]
         )
     ]

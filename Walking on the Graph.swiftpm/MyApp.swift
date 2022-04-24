@@ -14,4 +14,8 @@ struct MyApp: App {
             GameView()
         }
     }
+//    init() {
+//        let boogalooCFURL = Bundle.main.url(forResource: "Boogaloo-Regular-Regular", withExtension: "ttf")! as CFURL
+//        CTFontManagerRegisterFontsForURL(boogalooCFURL, CTFontManagerScope.process, nil)
+//    }
 }

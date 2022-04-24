@@ -18,7 +18,8 @@ struct Launching: View {
                         .edgesIgnoringSafeArea(.all)
                 }
                 .buttonStyle(FlatLinkStyle())
-                
+                Text("Tap to play")
+                    .font(Font.custom("Boogaloo-Regular", size: 10))
             }
         }
         .navigationBarHidden(true)
