@@ -10,7 +10,7 @@ import SwiftUI
 struct EndingView: View {
     @State var index: Int = 0
     @State var selection: Int? = nil
-    let images = ["ending1", "ending2", "ending3", "ending4", "ending5", "ending6", "ending7"]
+    let images = ["ending1", "ending2", "ending3", "ending4", "ending5", "ending6", "ending7", "end"]
     var body: some View {
         GeometryReader { geometry in
             let height = geometry.size.height
@@ -20,6 +20,7 @@ struct EndingView: View {
                 Image(images[index])
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
+                    .frame(width: width, height: height)
                 if index < images.count - 1  {
                     Button() {
                         index += 1

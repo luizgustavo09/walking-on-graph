@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TutorialView: View {
     @State var index: Int = 0
-    
     @State var selection: Int? = nil
     let images = ["tutorial1", "tutorial2", "tutorial7", "tutorial8", "tutorial10", "tutorial11", "tutorialLast"]
     var body: some View {
@@ -21,6 +20,7 @@ struct TutorialView: View {
                 Image(images[index])
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
+                    .frame(width: width, height: height)
                 if index == 0 {
                     Button() {
                         index += 1
@@ -37,8 +37,9 @@ struct TutorialView: View {
                         Image("btnPlay")
                             .resizable()
                             .edgesIgnoringSafeArea(.all)
-                            .padding(EdgeInsets(top: insets.top, leading: insets.leading, bottom: insets.bottom, trailing: insets.trailing))
+                            .frame(width: 150, height: 100)
                     }
+                    .padding(.top, 80)
                 } else {
                     Button() {
                         index += 1

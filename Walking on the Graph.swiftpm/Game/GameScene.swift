@@ -6,14 +6,36 @@
 //
 
 import SpriteKit
-
+import SwiftUI
 class GameScene: SKScene {
+    @Binding var isAlive: Bool?
+    
+    var title: SKLabelNode {
+        let label = SKLabelNode(fontNamed: "Boogaloo-Regular")
+        label.text = "Choose a start point and..."
+        label.fontColor = .primaryPurple
+        label.fontSize = 40
+        label.zPosition = 1
+        label.position = CGPoint(x: self.size.width / 2 - 10, y: -50)
+        label.name = "title"
+        return label
+    }
     let regions = Regions()
     let bridges = Bridges()
     var allRegions: [RegionNode] = []
     var allBridges: [BridgeNode] = []
     var gameStart: Bool = false
     var actualRegion: RegionNode?
+    
+    override init(size: CGSize) {
+        self._isAlive = .constant(true)
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func didMove(to view: SKView) {
         self.backgroundColor = UIColor.river
         self.anchorPoint = Auxiliary.anchorPoint
@@ -23,6 +45,8 @@ class GameScene: SKScene {
         logo.position = CGPoint(x: 10, y: -15)
         logo.zPosition = 1
         addChild(logo)
+        
+        addChild(title)
         regions.configureRegions(viewWidth: self.size.width, viewHeigth: self.size.height)
         bridges.configureBridges(viewWidth: self.size.width, viewHeigth: self.size.height)
         
@@ -40,14 +64,19 @@ class GameScene: SKScene {
         addChild(bridges.f)
         addChild(bridges.g)
         allBridges = [bridges.a, bridges.b, bridges.c, bridges.d, bridges.e, bridges.f, bridges.g]
-        
     }
     
     override func update(_ currentTime: TimeInterval) {
         if(gameStart || start()) {
-            print(self.actualRegion!.name!)
+            let title  = childNode(withName: "title")! as! SKLabelNode
+            title.text = "Enjoy the ride"
+            title.position = CGPoint(x: self.size.width / 2 - 60, y: -50)
             swapRegions()
             updateEdges(region: actualRegion!)
+            if(gameOver()) {
+                title.text = "You don't have any bridges"
+                ViewManager.shared.exitView = true
+            }
         }
     }
     //If a region was selected we disable all regions

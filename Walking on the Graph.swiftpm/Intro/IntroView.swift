@@ -17,6 +17,7 @@ struct IntroView: View {
                 Image(images[index])
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
+                    .frame(width: geometry.size.width, height: geometry.size.height)
                 if index == images.count - 1 {
                     Button() {
                         selection = 1
@@ -24,7 +25,7 @@ struct IntroView: View {
                        Image("btnStart")
                             .resizable()
                             .edgesIgnoringSafeArea(.all)
-                            .padding(EdgeInsets(top: geometry.size.height * 0.8, leading: geometry.size.width * 0.7, bottom: geometry.size.height * 0.05, trailing: geometry.size.width * 0.05))
+                            .padding(EdgeInsets(top: geometry.size.height * 0.8, leading: geometry.size.width * 0.65, bottom: geometry.size.height * 0.05, trailing: geometry.size.width * 0.05))
                     }
                 } else {
                     Button() {

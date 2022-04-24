@@ -8,7 +8,27 @@
 import SwiftUI
 
 struct GameOver: View {
+    @State var selection: Int? = nil
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Image("gameOver")
+                .resizable()
+                .edgesIgnoringSafeArea(.all)
+            VStack {
+                Spacer()
+                Button() {
+                    selection = 1
+                } label: {
+                    Image("btnNext")
+                        .resizable()
+                        .frame(width: 150, height: 100)
+                } .padding(.bottom, 140)
+            }
+        }
+        .navigationBarHidden(true)
+        .statusBar(hidden: true)
+        NavigationLink(destination: EndingView(), tag: 1, selection: $selection) {
+            EmptyView()
+        }
     }
 }
