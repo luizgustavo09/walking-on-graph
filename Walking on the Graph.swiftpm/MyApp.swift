@@ -19,8 +19,8 @@ struct MyApp: App {
             .navigationViewStyle(StackNavigationViewStyle())
         }
     }
-    init() {
-        let boogalooCFURL = Bundle.main.url(forResource: "Boogaloo-Regular", withExtension: "ttf")! as CFURL
-        CTFontManagerRegisterFontsForURL(boogalooCFURL, CTFontManagerScope.process, nil)
-    }
+//    init() {
+//        let boogalooCFURL = Bundle.main.url(forResource: "Boogaloo-Regular", withExtension: "ttf")! as CFURL
+//        CTFontManagerRegisterFontsForURL(boogalooCFURL, CTFontManagerScope.process, nil)
+//    }
 }
