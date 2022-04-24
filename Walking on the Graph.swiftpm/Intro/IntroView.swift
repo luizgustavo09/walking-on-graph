@@ -38,6 +38,11 @@ struct IntroView: View {
                 }
             }
         }
+        .navigationBarHidden(true)
+        .statusBar(hidden: true)
+        NavigationLink(destination: TutorialView(), tag: 1, selection: $selection) {
+            EmptyView()
+        }
     }
     
 }

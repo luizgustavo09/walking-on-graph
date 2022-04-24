@@ -12,18 +12,22 @@ struct Launching: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Image("launching")
-                    .resizable()
-                    .edgesIgnoringSafeArea(.all)
-                    .onTapGesture {
-                        selection = 1
-                    }
+                NavigationLink(destination: IntroView()) {
+                    Image("launching")
+                        .resizable()
+                        .edgesIgnoringSafeArea(.all)
+                }
+                .buttonStyle(FlatLinkStyle())
+                
             }
         }
         .navigationBarHidden(true)
         .navigationViewStyle(StackNavigationViewStyle())
-        NavigationLink(destination: IntroView(), tag: 1, selection: $selection) {
-            EmptyView()
-        }
+    }
+}
+
+struct FlatLinkStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
     }
 }
