@@ -15,16 +15,17 @@ class Regions {
     
     init() {
         r1 = RegionNode(imageName: "region1", bridges: ["a", "b", "d", "e", "f"])
-        r1.name = "r1"
+        r1.name = "1"
+        r1.zPosition = 1
         
         r2 = RegionNode(imageName: "region2", bridges: ["a", "b", "c"])
-        r2.name = "r2"
+        r2.name = "2"
         
         r3 = RegionNode(imageName: "region3", bridges: ["e", "f", "g"])
-        r3.name = "r3"
+        r3.name = "3"
         
         r4 = RegionNode(imageName: "region4", bridges: ["d", "c", "g"])
-        r4.name = "r4"
+        r4.name = "4"
     }
     func configureRegions(viewWidth: CGFloat, viewHeigth: CGFloat) {
         r1.background.size = CGSize(width: Auxiliary.eps(x: 838.43, w: viewWidth), height: Auxiliary.delta(y: 846.62, h: viewHeigth))

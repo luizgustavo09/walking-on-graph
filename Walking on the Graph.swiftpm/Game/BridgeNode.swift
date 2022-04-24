@@ -12,7 +12,19 @@ import SpriteKit
 class BridgeNode: SKNode {
     let background: SKSpriteNode
     var regions: [String] = []
-    var state: State
+    var changed: Bool = false
+    var state: State {
+        didSet {
+            if state == .white {
+                background.texture = SKTexture(imageNamed: "edge\((self.name!).uppercased())O")
+            } else if state == .gray {
+                background.texture = SKTexture(imageNamed: "edge\((self.name!).uppercased())G")
+            } else {
+                background.texture = SKTexture(imageNamed: "edge\((self.name!).uppercased())P")
+                changed = true
+            }
+        }
+    }
     init(imageName: String, regions: [String]) {
         self.background = SKSpriteNode(imageNamed: imageName)
         self.regions = regions
@@ -24,6 +36,10 @@ class BridgeNode: SKNode {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        state = .black
     }
 }
 extension BridgeNode {

@@ -16,26 +16,40 @@ class Bridges {
     var g: BridgeNode
     
     init() {
-        a = BridgeNode(imageName: "edgeAO", regions: ["r1", "r2"])
+        a = BridgeNode(imageName: "edgeAO", regions: ["1", "2"])
         a.name = "a"
+        a.zPosition = 2
+        a.isUserInteractionEnabled = false
         
-        b = BridgeNode(imageName: "edgeBO", regions: ["r1", "r2"])
+        b = BridgeNode(imageName: "edgeBO", regions: ["1", "2"])
         b.name = "b"
+        b.zPosition = 2
+        b.isUserInteractionEnabled = false
         
-        c = BridgeNode(imageName: "edgeCO", regions: ["r2", "r4"])
+        c = BridgeNode(imageName: "edgeCO", regions: ["2", "4"])
         c.name = "c"
+        c.zPosition = 2
+        c.isUserInteractionEnabled = false
         
-        d = BridgeNode(imageName: "edgeDO", regions: ["r1", "r4"])
+        d = BridgeNode(imageName: "edgeDO", regions: ["1", "4"])
         d.name = "d"
+        d.zPosition = 2
+        d.isUserInteractionEnabled = false
         
-        e = BridgeNode(imageName: "edgeEO", regions: ["r1", "r3"])
+        e = BridgeNode(imageName: "edgeEO", regions: ["1", "3"])
         e.name = "e"
+        e.zPosition = 2
+        e.isUserInteractionEnabled = false
         
-        f = BridgeNode(imageName: "edgeFO", regions: ["r1", "r3"])
+        f = BridgeNode(imageName: "edgeFO", regions: ["1", "3"])
         f.name = "f"
+        f.zPosition = 2
+        f.isUserInteractionEnabled = false
         
-        g = BridgeNode(imageName: "edgeGO", regions: ["r3", "r4"])
+        g = BridgeNode(imageName: "edgeGO", regions: ["3", "4"])
         g.name = "g"
+        g.zPosition = 2
+        g.isUserInteractionEnabled = false
     }
     
     func configureBridges(viewWidth: CGFloat, viewHeigth: CGFloat) {

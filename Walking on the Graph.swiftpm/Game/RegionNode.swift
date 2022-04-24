@@ -10,6 +10,15 @@ import SpriteKit
 class RegionNode: SKNode {
     let background: SKSpriteNode
     var state: State
+//    var state: State {
+//        didSet {
+//            if state == .white {
+//                background.texture = SKTexture(imageNamed: "region\(self.name!)")
+//            } else {
+//                background.texture = SKTexture(imageNamed: "region\(self.name!)B")
+//            }
+//        }
+//    }
     var bridges: [String] = []
     init(imageName: String, bridges: [String]) {
         background = SKSpriteNode(imageNamed: imageName)
@@ -17,11 +26,15 @@ class RegionNode: SKNode {
         state = .white
         super.init()
         addChild(background)
-        background.isUserInteractionEnabled = false
+        self.isUserInteractionEnabled = true
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.state = .black
     }
 }
 

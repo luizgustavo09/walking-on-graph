@@ -11,11 +11,16 @@ import SwiftUI
 struct MyApp: App {
     var body: some Scene {
         WindowGroup {
-            GameView()
+            NavigationView {
+                Launching()
+            }
+            .navigationBarHidden(true)
+            .statusBar(hidden: true)
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
-//    init() {
-//        let boogalooCFURL = Bundle.main.url(forResource: "Boogaloo-Regular-Regular", withExtension: "ttf")! as CFURL
-//        CTFontManagerRegisterFontsForURL(boogalooCFURL, CTFontManagerScope.process, nil)
-//    }
+    init() {
+        let boogalooCFURL = Bundle.main.url(forResource: "Boogaloo-Regular", withExtension: "ttf")! as CFURL
+        CTFontManagerRegisterFontsForURL(boogalooCFURL, CTFontManagerScope.process, nil)
+    }
 }

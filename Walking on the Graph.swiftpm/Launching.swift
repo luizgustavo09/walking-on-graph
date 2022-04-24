@@ -10,20 +10,20 @@ import SwiftUI
 struct Launching: View {
     @State var selection: Int? = nil
     var body: some View {
-        NavigationView {
-            ZStack {
-                NavigationLink(destination: IntroView()) {
-                    Image("launching")
-                        .resizable()
-                        .edgesIgnoringSafeArea(.all)
-                }
-                .buttonStyle(FlatLinkStyle())
+        ZStack {
+            NavigationLink(destination: IntroView()) {
+                Image("launching")
+                    .resizable()
+                    .edgesIgnoringSafeArea(.all)
+            }
+            .buttonStyle(FlatLinkStyle())
+            VStack {
+                Spacer()
                 Text("Tap to play")
-                    .font(Font.custom("Boogaloo-Regular", size: 10))
+                    .font(Font.custom("Boogaloo-Regular", size: 30))
+                    .padding(.bottom, 100)
             }
         }
-        .navigationBarHidden(true)
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
