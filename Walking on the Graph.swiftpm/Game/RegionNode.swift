@@ -9,8 +9,12 @@ import SpriteKit
 
 class RegionNode: SKNode {
     let background: SKSpriteNode
-    init(imageName: String) {
+    var state: State
+    var bridges: [String] = []
+    init(imageName: String, bridges: [String]) {
         background = SKSpriteNode(imageNamed: imageName)
+        self.bridges = bridges
+        state = .white
         super.init()
         addChild(background)
         background.isUserInteractionEnabled = false
@@ -19,5 +23,14 @@ class RegionNode: SKNode {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+}
+
+extension RegionNode {
+    enum State: Int {
+        //If I'm not here
+        case white = 0
+        
+        //If I'm here
+        case black = 1
+    }
 }

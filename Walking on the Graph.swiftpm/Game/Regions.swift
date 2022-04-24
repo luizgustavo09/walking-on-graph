@@ -14,16 +14,16 @@ class Regions {
     var r4: RegionNode
     
     init() {
-        r1 = RegionNode(imageName: "region1")
+        r1 = RegionNode(imageName: "region1", bridges: ["a", "b", "d", "e", "f"])
         r1.name = "r1"
         
-        r2 = RegionNode(imageName: "region2")
+        r2 = RegionNode(imageName: "region2", bridges: ["a", "b", "c"])
         r2.name = "r2"
         
-        r3 = RegionNode(imageName: "region3")
+        r3 = RegionNode(imageName: "region3", bridges: ["e", "f", "g"])
         r3.name = "r3"
         
-        r4 = RegionNode(imageName: "region4")
+        r4 = RegionNode(imageName: "region4", bridges: ["d", "c", "g"])
         r4.name = "r4"
     }
     func configureRegions(viewWidth: CGFloat, viewHeigth: CGFloat) {
