@@ -22,7 +22,7 @@ struct Launching: View {
                 VStack {
                     Spacer()
                     Text("Tap to play")
-                        .font(Font.custom("Boogaloo-Regular", size: 30))
+                        .font(Font.custom("Boogaloo-Regular", size: 35))
                         .padding(.bottom, 100)
                 }
             }

@@ -74,7 +74,7 @@ class GameScene: SKScene {
             swapRegions()
             updateEdges(region: actualRegion!)
             if(gameOver()) {
-                title.text = "You don't have any bridges"
+                title.text = "Oh oh, there are still other bridges to visit"
                 ViewManager.shared.exitView = true
             }
         }

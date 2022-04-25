@@ -36,8 +36,8 @@ struct GameView: View {
                         .font(.largeTitle)
                 }
                 .foregroundColor(Color(uiColor: .primaryPurple))
-                .padding(.trailing, 70)
-                .padding(.bottom, 120)
+                .padding(.trailing, 150)
+                .padding(.bottom, 250)
             }
             NavigationLink(destination: GameOver(), tag: 1, selection: $selection) {
                EmptyView()

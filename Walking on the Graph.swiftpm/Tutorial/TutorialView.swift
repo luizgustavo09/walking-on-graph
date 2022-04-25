@@ -10,7 +10,7 @@ import SwiftUI
 struct TutorialView: View {
     @State var index: Int = 0
     @State var selection: Int? = nil
-    let images = ["tutorial1", "tutorial2", "tutorial7", "tutorial8", "tutorial10", "tutorial11", "tutorialLast"]
+    let images = ["tutorial1", "tutorial2", "tutorial7", "tutorial8", "tutorial9", "tutorial11", "tutorialLast"]
     var body: some View {
         GeometryReader { geometry in
             let height = geometry.size.height
@@ -25,7 +25,7 @@ struct TutorialView: View {
                     Button() {
                         index += 1
                     } label: {
-                       Image("btnPlay")
+                       Image("btnNext")
                             .resizable()
                             .edgesIgnoringSafeArea(.all)
                             .padding(EdgeInsets(top: insets.top, leading: insets.leading, bottom: insets.bottom, trailing: insets.trailing))
